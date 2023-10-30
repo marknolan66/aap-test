@@ -1,1 +1,8 @@
--
+---
+- name: run scan
+  hosts: all
+
+  tasks:
+  - shell: |
+      oc annotate compliancescans/ocp4-cis compliance.openshift.io/rescan=
+
