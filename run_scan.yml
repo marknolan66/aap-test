@@ -12,8 +12,8 @@
       find . -name "*.bzip2" -exec cp {} . \;
       oscap xccdf generate report ocp4-cis-api-checks-pod.xml.bzip2  > ocp4-cis-api-checks-pod.html
       web=$(oc get pods -n web | grep -i "httpd-ex-git" | grep -i running | cut -d' ' -f1)
-      oc -n web exec -it $web -- mkdir tmp
-      oc -n web cp ocp4-cis-api-checks-pod.html  $web:tmp/
+      oc -n web exec -it $web -- rm -rf temp
+      oc -n web exec -it $web -- mkdir temp && oc -n web cp ocp4-cis-api-checks-pod.html  $web:temp/
       
 
 
