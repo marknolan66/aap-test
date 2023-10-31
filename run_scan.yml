@@ -4,5 +4,6 @@
 
   tasks:
   - shell: |
+      oc login -u kubeadmin -p C6xuJ-345JZ-6d3Vw-Xsffe https://api.crc.testing:6443
       oc annotate compliancescans/ocp4-cis compliance.openshift.io/rescan=
 
